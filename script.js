@@ -8,10 +8,8 @@ const drawImageToCanvas = (maxSize, alpha) => {
     const ctx = canvas.getContext('2d')
     const image = new Image()
     const wm = new Image()
-    image.src = 'picture.png'
-    wm.src = 'wm2.png'
-    wm.resize= 10
-    wm.height= 10
+    image.src = 'img/picture.png'
+    wm.src = 'img/wm2.png'
     
     let width = image.width
     let height = image.height
