@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Canvy</title>
 </head>
 <body>
-  
+    <div class="container">
+        <div class="image">
+            <img src="picture.png" alt="">
+            <img id="wm" src="wm2.png" width="200px" alt="">
+        </div>
+        <button id="draw">Rysuj</button>
+        <input id="opacityValue" type="range" min=0 max=1 step=0.01>
+        <canvas id="canvas" ></canvas>
+    </div>  
+
+    <script src="script.js"></script>
 </body>
-</html> 
+</html>
