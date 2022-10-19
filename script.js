@@ -1,21 +1,20 @@
 const button = document.getElementById('draw')
 const canvas = document.getElementById('canvas')
 const opacityVal = document.getElementById('opacityValue')
+const imgSizeInput = document.getElementById('img-size')
 
-// const mw = document.getElementById('wm')
+
 
 const drawImageToCanvas = (maxSize, alpha) => {
     const ctx = canvas.getContext('2d')
     const image = new Image()
     const wm = new Image()
-    image.src = 'img/picture.png'
+    image.src = 'img/photo2.jpg'
     wm.src = 'img/wm2.png'
     
     let width = image.width
     let height = image.height
-    // width = 487
-    // height = 354
-    console.log(width, height)
+
     if (width > height) {
         if (width > maxSize) {
             height *= maxSize / width
@@ -41,5 +40,22 @@ const drawImageToCanvas = (maxSize, alpha) => {
     // ctx.drawImage(wm, 0, 0, 50, 50)
 }
 
-button.addEventListener('click', ()=> drawImageToCanvas(500))
-opacityVal.addEventListener('change',(e)=> drawImageToCanvas(500,e.target.value))
+
+let minVal = imgSizeInput.value
+let opacity = 1
+const reDraw = ()=>{
+
+    drawImageToCanvas(minVal,opacity)
+}
+
+button.addEventListener('click', ()=> reDraw())
+opacityVal.addEventListener('input',(e)=> {
+    opacity=e.target.value;
+    reDraw()
+})
+
+imgSizeInput.addEventListener('change', (e)=>{
+    minVal=e.target.value
+    reDraw()
+})
+drawImageToCanvas(minVal,opacity)
